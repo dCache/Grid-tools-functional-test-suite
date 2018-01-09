@@ -7,7 +7,7 @@ Library		Collections
 Library		DoorTesterLib.py	${HOST}
 Library		ProtocolTesterLib.py
 Suite Setup	TEST PROTOCOL DOOR	${PROTOCOL}	${PORT}
-Suite Teardown	REMOVE REMOTE DIRECTORIES WITH NAMES CONTAINING	testo
+Suite Teardown	REMOVE REMOTE DIRECTORIES WITH NAMES CONTAINING	remotetest
 
 
 
