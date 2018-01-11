@@ -5,9 +5,9 @@ PROTOCOL_PORTS = {"srm": os.environ.get('SRM_PORT'), "gsidcap": os.environ.get('
 HOST = os.environ.get('DFTS_SUT')
 
 LOCAL_DIR = os.environ.get('WORKSPACE')
-LOCAL_FILE = LOCAL_DIR + "testfile"
+LOCAL_FILE = LOCAL_DIR + "localfile"
 
 REMOTE_DIR = os.environ.get('REMOTE_DIR')
-REMOTE_FILE = "remotetest"
+REMOTE_FILE = "remotefile"
 if REMOTE_DIR:
-    REMOTE_FILE = REMOTE_DIR + "remotetest"
+    REMOTE_FILE = REMOTE_DIR + "remotefile"

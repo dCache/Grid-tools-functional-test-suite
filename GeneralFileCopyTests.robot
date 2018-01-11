@@ -12,7 +12,7 @@ Library		FileTesterLib.py
 
 
 Suite Setup	CHECK IF DOORS ARE OPEN		${PROTOCOL_PORTS}
-Suite Teardown	REMOVE LOCAL AND REMOTE FILES WITH NAMES CONTAINING	testfile remotetest
+Suite Teardown	REMOVE LOCAL AND REMOTE FILES WITH NAMES CONTAINING	localfile remotefile
 Test Template	COPY FILE WITH CLIENT AND PROTOCOL
 
 

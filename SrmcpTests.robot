@@ -11,8 +11,7 @@ Library		DoorTesterLib.py	${HOST}
 Library		ProtocolTesterLib.py	
 Library		FileTesterLib.py	
 Suite Setup	TEST PROTOCOL DOOR	${PROTOCOL}	${PORT}
-Suite Teardown	REMOVE LOCAL AND REMOTE FILES WITH NAMES CONTAINING	testfile remotetest
-
+Suite Teardown	REMOVE LOCAL AND REMOTE FILES WITH NAMES CONTAINING	localfile remotefile
 
 
 *** Variables ***
@@ -92,7 +91,7 @@ COPY HTTP
 	SET HOST	${HOST}
 	SET EXTRA ARGUMENTS	-${SRM_VERSION} -retry_num=0
 	${FILE_NAME}=	REPLACE STRING	${TEST NAME}	${SPACE}	${EMPTY}
-	CREATE FILE	${LOCAL_FILE}${FILe_NAME}	This is a testfile for ${TEST NAME}
+	CREATE FILE	${LOCAL_FILE}${FILE_NAME}	This is a testfile for ${TEST NAME}
 	COPY LOCAL FILE		${LOCAL_FILE}${FILE_NAME}	${REMOTE_FILE}${FILE_NAME}
 	COMMAND SHOULD EXECUTE SUCCESSFULLY
 	SET PROTOCOL	http	&{PROTOCOL_PORTS}[http]		${PROTOCOL}	${PORT}
