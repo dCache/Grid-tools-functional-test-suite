@@ -11,7 +11,7 @@ Library		DoorTesterLib.py	${HOST}
 Library		ProtocolTesterLib.py	
 Library		FileTesterLib.py	
 Suite Setup	TEST PROTOCOL DOOR	${PROTOCOL}	${PORT}
-Suite Teardown	REMOVE LOCAL AND REMOTE FILES WITH NAMES CONTAINING	localfile remotefile
+Suite Teardown	REMOVE LOCAL AND REMOTE FILES WITH NAMES CONTAINING	localfile	remotefile
 
 
 *** Variables ***
