@@ -5,7 +5,7 @@ PROTOCOL_PORTS = {"srm": os.environ.get('SRM_PORT'), "gsidcap": os.environ.get('
 HOST = os.environ.get('DFTS_SUT')
 
 LOCAL_DIR = os.environ.get('WORKSPACE')
-LOCAL_FILE = LOCAL_DIR + "localfile"
+LOCAL_FILE = LOCAL_DIR + "/localfile"
 
 REMOTE_DIR = os.environ.get('REMOTE_DIR')
 REMOTE_FILE = "remotefile"
