@@ -1,4 +1,5 @@
 import subprocess
+from robot.api import logger
 from UserDefinedVariables import *
 
 not_file_uri_schemes = ["dccp"]    # Protocols that don't use the file:// part
@@ -83,7 +84,8 @@ class ProtocolTesterLib:
         Private function that sets the local file URI.
 
         When doing something with a local file it will preface the filename with the file:// prefix if the client needs.
-        this and when it isn't already present.
+        this and when it isn't already present. The function also handles the special case of SRM insisting on
+        a file:/// prefix (resulting in four total slashes when the root-fs slash is included).
 
         :param local_file: Absolute path to the file (Optionally can prefix it with file:// if needed).
 
@@ -91,7 +93,12 @@ class ProtocolTesterLib:
 
         """
         if self.client not in not_file_uri_schemes and "file://" not in local_file:
-            self.local_file = "file://" + local_file
+            if self.protocol1 == "srm":
+                self.local_file = "file:///" + local_file
+                logger.info("SRM protocol detected, setting local file string to " + self.local_file)
+            else:
+                self.local_file = "file://" + local_file
+                logger.info("Non-SRM protocol using file_uri_scheme detected, setting local file string to " + self.local_file)
         else:
             self.local_file = local_file
 
@@ -309,6 +316,7 @@ class ProtocolTesterLib:
         self.host_string = self._create_host_string(self.protocol1, self.port1, self.host1)
 
         self.command = self.client + " " + self.extra_arguments + " " + self.local_file + " " + self.host_string + self.remote_file
+        logger.info("executing command: " + self.command)
         self._execute_command(self.command)
 
     def copy_remote_file(self, remote_file, local_file):
