@@ -254,12 +254,15 @@ class ProtocolTesterLib:
 
         specific_arguments = " "
 
+        logger.info("srm-release-space called with token " + space_token)
+
         if self.client == "srm-release-space":
             if space_token and "space_token" not in self.extra_arguments:
                 specific_arguments += " -space_token=" + space_token
 
         self.host_string = self._create_host_string(self.protocol1, self.port1, self.host1)
         self.command = self.client + " " + self.extra_arguments + specific_arguments + " " + self.host_string + "/"
+        logger.info("In release_space, executing command " + self.command)
         self._execute_command(self.command)
 
 
