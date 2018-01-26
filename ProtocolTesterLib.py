@@ -505,7 +505,7 @@ class ProtocolTesterLib:
 
         host_string = protocol + "://" + host + ":" + port
 
-        return host_string.strip()
+        return host_string
 
     def _execute_command(self, command):
         """
