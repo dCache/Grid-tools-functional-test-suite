@@ -320,7 +320,6 @@ class ProtocolTesterLib:
         self.host_string = self._create_host_string(self.protocol1, self.port1, self.host1)
 
         self.command = self.client + " " + self.extra_arguments + " " + self.local_file + " " + self.host_string + self.remote_file
-        logger.info("executing command: " + self.command)
         self._execute_command(self.command)
 
     def copy_remote_file(self, remote_file, local_file):
