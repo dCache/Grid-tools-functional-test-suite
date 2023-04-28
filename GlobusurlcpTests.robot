@@ -16,7 +16,7 @@ Suite Teardown	REMOVE LOCAL AND REMOTE FILES WITH NAMES CONTAINING	localfile	rem
 *** Variables ***
 
 ${PROTOCOL}	gsiftp
-${PORT}		&{PROTOCOL_PORTS}[${PROTOCOL}]
+${PORT}		${PROTOCOL_PORTS}[${PROTOCOL}]
 ${CLIENT}	gfal-copy
 
 

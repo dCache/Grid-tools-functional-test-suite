@@ -13,7 +13,7 @@ Library		ProtocolTesterLib.py
 
 ${CLIENT}	dccp
 ${PROTOCOL}	gsidcap
-${PORT}		&{PROTOCOL_PORTS}[${PROTOCOL}]
+${PORT}		${PROTOCOL_PORTS}[${PROTOCOL}]
 
 
 
