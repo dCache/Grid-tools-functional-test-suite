@@ -15,7 +15,7 @@ Suite Teardown	REMOVE REMOTE DIRECTORIES WITH NAMES CONTAINING	testdir
 
 ${CLIENT}	srm-set-permissions
 ${PROTOCOL}	srm
-${PORT}		&{PROTOCOL_PORTS}[${PROTOCOL}]
+${PORT}		${PROTOCOL_PORTS}[${PROTOCOL}]
 
 # Default SRM version, can be overwritten with command line call
 ${SRM_VERSION}	2

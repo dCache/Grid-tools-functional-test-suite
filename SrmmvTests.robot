@@ -17,7 +17,7 @@ Suite Teardown	REMOVE LOCAL AND REMOTE FILES WITH NAMES CONTAINING	localfile	rem
 
 ${CLIENT}	srmmv
 ${PROTOCOL}	srm
-${PORT}		&{PROTOCOL_PORTS}[${PROTOCOL}]
+${PORT}		${PROTOCOL_PORTS}[${PROTOCOL}]
 
 
 # Default SRM version, can be overwritten in command line call

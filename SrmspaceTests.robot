@@ -15,7 +15,7 @@ Suite Teardown	REMOVE LOCAL AND REMOTE FILES WITH NAMES CONTAINING	testfile	remo
 *** Variables ***
 ${CLIENT}	srm-get-space-tokens
 ${PROTOCOL}	srm
-${PORT}		&{PROTOCOL_PORTS}[${PROTOCOL}]
+${PORT}		${PROTOCOL_PORTS}[${PROTOCOL}]
 
 ${SPACE_DESC}	robot-g2-testspace
 

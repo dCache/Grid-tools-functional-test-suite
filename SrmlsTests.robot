@@ -15,7 +15,7 @@ Suite Setup	TEST PROTOCOL DOOR	${PROTOCOL}	${PORT}
 
 ${CLIENT}	srmls
 ${PROTOCOL}	srm
-${PORT}		&{PROTOCOL_PORTS}[${PROTOCOL}]
+${PORT}		${PROTOCOL_PORTS}[${PROTOCOL}]
 
 # Default SRM version, can be overwritten in command line call
 ${SRM_VERSION}	2
