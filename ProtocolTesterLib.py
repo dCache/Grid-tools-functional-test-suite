@@ -503,7 +503,7 @@ class ProtocolTesterLib:
         if not host:
             raise NotImplementedError(self.HostError)
 
-        host_string = protocol + "://" + host + ":" + port
+        host_string = protocol + "://" + host + ":" + str(port)
 
         return host_string
 
@@ -533,7 +533,7 @@ class ProtocolTesterLib:
         :return: /
 
         """
-        errorstream = "STDOUT: " + self.output + " STDERR: " + self.error
+        errorstream = "STDOUT: " + self.output.decode("utf-8") + " STDERR: " + self.error.decode("utf-8")
 
         if expected_error not in errorstream:
             raise AssertionError("Expected error: " + expected_error + " but got: " + errorstream)
