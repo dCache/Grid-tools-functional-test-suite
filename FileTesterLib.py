@@ -69,5 +69,5 @@ class FileTesterLib:
         if hash_file1 != hash_file2:
             raise AssertionError("Hashes don't match ! Files don't contain the same data !")
         else:
-            print "Files are the same !"
-            print hash_type + ": " + hash_file1
+            print("Files are the same !")
+            print(hash_type + ": " + hash_file1)

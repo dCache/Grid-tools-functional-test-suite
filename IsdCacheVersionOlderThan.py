@@ -41,13 +41,13 @@ major_version_system, minor_version_system = get_versions(system_version)
 
 
 if major_version_system < major_version_compare:
-    print "true"
+    print("true")
 elif major_version_system > major_version_compare:
-    print "false"
+    print("false")
 elif major_version_system == major_version_compare and minor_version_system < minor_version_compare:
-    print "true"
+    print("true")
 else:
-    print "false"
+    print("false")
 
 
 
