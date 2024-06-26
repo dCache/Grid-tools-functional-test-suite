@@ -19,17 +19,13 @@ ${PORT}		${PROTOCOL_PORTS}[${PROTOCOL}]
 
 ${SPACE_DESC}	robot-g2-testspace
 
-# Default SRM version, can be overwritten in command line call
-${SRM_VERSION}	2
-
-
 *** Test Cases ***
 GET SPACE TOKENS
 	[Documentation]	Checks if it can get space tokens from the host
 	SET CLIENT	srm-reserve-space
 	SET PROTOCOL	${PROTOCOL}	${PORT}
 	SET HOST	${HOST}
-	SET EXTRA ARGUMENTS	-${SRM_VERSION} -retry_num=0
+	SET EXTRA ARGUMENTS	-retry_num=0
 	${SPACE_TOKEN}=		RESERVE SPACE	${SPACE_DESC}	guaranteed_size=2	retention_policy=REPLICA
 	COMMAND SHOULD EXECUTE SUCCESSFULLY
 	SET CLIENT	srm-get-space-tokens
@@ -45,7 +41,7 @@ PUT REMOVED
 	SET CLIENT	srmcp
 	SET PROTOCOL	${PROTOCOL}	${PORT}
 	SET HOST	${HOST}
-	SET EXTRA ARGUMENTS	-${SRM_VERSION} -retry_num=0
+	SET EXTRA ARGUMENTS	-retry_num=0
 	${FILE_NAME}=	REPLACE STRING	${TEST NAME}	${SPACE}	${EMPTY}
 	CREATE FILE	${LOCAL_FILE}${FILE_NAME}	This is a testfile for ${TEST NAME}
 	COPY LOCAL FILE		${LOCAL_FILE}${FILE_NAME}	${REMOTE_FILE}${FILE_NAME}
